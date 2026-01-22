@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SMK Automobiles | Bike Finance & Pre-Owned Bikes</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;color:#1f2937;background:#fff}
+a{text-decoration:none}
+button{cursor:pointer}
+
+/* NAV */
+nav{
+position:fixed;top:0;width:100%;z-index:1000;
+background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.1)
+}
+.nav-container{
+max-width:1200px;margin:auto;padding:1rem 2rem;
+display:flex;justify-content:space-between;align-items:center
+}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;color:#1e40af}
+.logo-icon{background:#1e40af;color:#fff;padding:.4rem .6rem;border-radius:6px}
+.nav-links{list-style:none;display:flex;gap:1.5rem}
+.nav-links a{color:#374151;font-weight:600}
+.enquire-btn{
+background:#fbbf24;padding:.6rem 1.2rem;
+border-radius:6px;font-weight:700;color:#111827
+}
+
+/* HERO */
+.hero{
+margin-top:80px;
+background:linear-gradient(135deg,#1e3a8a,#2563eb);
+color:#fff;padding:6rem 2rem
+}
+.hero-container{max-width:1200px;margin:auto}
+.hero h1{font-size:3rem;margin-bottom:1rem}
+.hero p{max-width:600px;margin-bottom:2rem}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{
+background:#fbbf24;color:#111827;
+padding:1rem 2rem;border-radius:8px;font-weight:800
+}
+.btn-secondary{
+border:2px solid #fff;color:#fff;
+padding:1rem 2rem;border-radius:8px
+}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.container{max-width:1200px;margin:auto}
+.section-title{text-align:center;font-size:2.3rem;margin-bottom:.8rem}
+.section-sub{text-align:center;color:#6b7280;margin-bottom:3rem}
+
+/* SERVICES */
+.services-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:2rem
+}
+.service-card{
+background:#fff;border-radius:12px;padding:2rem;
+box-shadow:0 4px 12px rgba(0,0,0,.08)
+}
+.service-card h3{margin-bottom:.8rem}
+.service-card ul{list-style:none;margin:1rem 0}
+.service-card li{margin:.4rem 0}
+.service-btn{
+width:100%;padding:.9rem;border:none;border-radius:8px;
+font-weight:700
+}
+.btn-blue{background:#1e40af;color:#fff}
+.btn-dark{background:#111827;color:#fff}
+
+/* PROCESS */
+.process-steps{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:2rem;text-align:center
+}
+.step-num{
+width:60px;height:60px;border-radius:50%;
+background:#2563eb;color:#fff;
+display:flex;align-items:center;justify-content:center;
+margin:auto;font-size:1.5rem;font-weight:800
+}
+
+/* TESTIMONIALS */
+.testimonials-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:2rem
+}
+.testimonial{
+background:#fff;padding:2rem;border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.08)
+}
+
+/* CONTACT */
+.contact-grid{
+display:grid;grid-template-columns:1fr 1fr;gap:3rem
+}
+form input,form select,form textarea{
+width:100%;padding:.8rem;margin-top:.4rem;
+border:1px solid #d1d5db;border-radius:6px
+}
+.submit-btn{
+margin-top:1rem;width:100%;
+background:#fbbf24;padding:1rem;border:none;
+font-weight:800;border-radius:8px
+}
+
+/* FOOTER */
+footer{
+background:#0f172a;color:#cbd5f5;
+padding:3rem 2rem;text-align:center
+}
+
+/* PAGES */
+#eligibilityPage,#inventoryPage{display:none;margin-top:80px}
+
+/* INVENTORY */
+.bike-grid{
+display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+gap:2rem
+}
+.bike-card{
+background:#fff;border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+overflow:hidden
+}
+.bike-card div{padding:1.5rem}
+.apply-btn{
+width:100%;padding:.8rem;
+background:#fbbf24;border:none;font-weight:800
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{font-size:2.2rem}
+.contact-grid{grid-template-columns:1fr}
+.nav-links{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MAIN PAGE -->
+<div id="mainContent">
+
+<nav>
+<div class="nav-container">
+<div class="logo"><span class="logo-icon">SMK</span>Automobiles</div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="javascript:showInventoryPage()">Bikes</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<a class="enquire-btn" href="javascript:showEligibilityPage()">Check Eligibility</a>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-container">
+<h1>Your Dream Bike,<br>Now Within Reach</h1>
+<p>Easy bike finance & trusted pre-owned bikes in Coimbatore.</p>
+<div class="hero-buttons">
+<a class="btn-primary" href="javascript:showEligibilityPage()">Apply for Finance</a>
+<a class="btn-secondary" href="javascript:showInventoryPage()">View Bikes</a>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<h2 class="section-title">Our Services</h2>
+<p class="section-sub">Simple, transparent & fast</p>
+
+<div class="services-grid">
+<div class="service-card">
+<h3>Two-Wheeler Finance</h3>
+<ul>
+<li>✔ Low EMI</li>
+<li>✔ Quick approval</li>
+<li>✔ Minimal documents</li>
+</ul>
+<button class="service-btn btn-blue" onclick="showEligibilityPage()">Check Eligibility</button>
+</div>
+
+<div class="service-card">
+<h3>Pre-Owned Bikes</h3>
+<ul>
+<li>✔ Verified bikes</li>
+<li>✔ Best price</li>
+<li>✔ Ready delivery</li>
+</ul>
+<button class="service-btn btn-dark" onclick="showInventoryPage()">Browse Bikes</button>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="section-title">How It Works</h2>
+<div class="process-steps">
+<div><div class="step-num">1</div>Choose Bike</div>
+<div><div class="step-num">2</div>Apply Finance</div>
+<div><div class="step-num">3</div>Quick Approval</div>
+<div><div class="step-num">4</div>Ride Home</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2 class="section-title">Happy Customers</h2>
+<div class="testimonials-grid">
+<div class="testimonial">“Got bike within 1 day. Very smooth.” – Karthik</div>
+<div class="testimonial">“Best place for second-hand bikes.” – Suresh</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container contact-grid">
+<div>
+<h2>Contact Us</h2>
+<p>Avinashi Road, Coimbatore</p>
+<p>📞 +91 98765 43210</p>
+</div>
+
+<form onsubmit="submitForm(event)">
+<label>Name</label>
+<input required>
+<label>Phone</label>
+<input required>
+<label>Interested In</label>
+<select>
+<option>Finance</option>
+<option>Used Bike</option>
+<option>Both</option>
+</select>
+<button class="submit-btn">Submit</button>
+</form>
+</div>
+</section>
+
+<footer>© 2024 SMK Automobiles</footer>
+</div>
+
+<!-- ELIGIBILITY PAGE -->
+<div id="eligibilityPage">
+<section class="container">
+<h2>Eligibility Calculator</h2><br>
+<input id="income" placeholder="Monthly Income ₹"><br><br>
+<input id="loan" placeholder="Loan Amount ₹"><br><br>
+<input id="months" placeholder="Tenure (months)"><br><br>
+<button class="btn-primary" onclick="calculateEMI()">Calculate</button>
+<p id="emiResult"></p><br>
+<button onclick="showMainPage()">← Back</button>
+</section>
+</div>
+
+<!-- INVENTORY PAGE -->
+<div id="inventoryPage">
+<section class="container">
+<h2>Available Bikes</h2><br>
+<div class="bike-grid">
+<div class="bike-card">
+<div>
+<h3>Royal Enfield Classic 350</h3>
+<p>₹1,85,000</p>
+<button class="apply-btn">Apply Finance</button>
+</div>
+</div>
+<div class="bike-card">
+<div>
+<h3>Honda Activa (Used)</h3>
+<p>₹45,000</p>
+<button class="apply-btn">Apply Finance</button>
+</div>
+</div>
+</div><br>
+<button onclick="showMainPage()">← Back</button>
+</section>
+</div>
+
+<script>
+function showEligibilityPage(){
+mainContent.style.display="none"
+eligibilityPage.style.display="block"
+inventoryPage.style.display="none"
+window.scrollTo(0,0)
+}
+function showInventoryPage(){
+mainContent.style.display="none"
+eligibilityPage.style.display="none"
+inventoryPage.style.display="block"
+window.scrollTo(0,0)
+}
+function showMainPage(){
+mainContent.style.display="block"
+eligibilityPage.style.display="none"
+inventoryPage.style.display="none"
+window.scrollTo(0,0)
+}
+function calculateEMI(){
+let income=income.value
+let loan=loan.value
+let months=months.value
+let emi=Math.round((loan*1.12)/months)
+emiResult.innerText=`Estimated EMI: ₹${emi}`
+}
+function submitForm(e){
+e.preventDefault()
+alert("We will contact you soon!")
+}
+</script>
+
+</body>
+</html>
