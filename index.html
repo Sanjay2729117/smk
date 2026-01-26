@@ -40,22 +40,12 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #1e40af;
+            gap: 1rem;
         }
 
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            background: #1e40af;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
+        .logo-image {
+            width: 120px;
+            height: auto;
         }
 
         .nav-links {
@@ -66,22 +56,22 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #4b5563;
-            font-weight: 500;
+            color: #1f2937;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #1e40af;
+            color: #fbbf24;
         }
 
         .enquire-btn {
-            background: #fbbf24;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
             color: #1f2937;
             padding: 0.7rem 1.5rem;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
@@ -93,7 +83,7 @@
         /* Hero Section */
         .hero {
             margin-top: 70px;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
             color: white;
             padding: 6rem 2rem;
             position: relative;
@@ -103,12 +93,23 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M800 300 Q 900 250 1000 300 T 1200 300" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
-            opacity: 0.3;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, transparent 100%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.08) 0%, transparent 100%);
+            border-radius: 50%;
         }
 
         .hero-container {
@@ -116,28 +117,26 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
-        }
-
-        .breadcrumb {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
             align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            opacity: 0.9;
         }
 
-        .hero h1 {
+        .hero-content h1 {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
-        .hero p {
+        .hero-content h1 span {
+            color: #fbbf24;
+        }
+
+        .hero-content p {
             font-size: 1.1rem;
             margin-bottom: 2.5rem;
-            max-width: 600px;
             opacity: 0.95;
         }
 
@@ -148,7 +147,7 @@
         }
 
         .btn-primary {
-            background: #fbbf24;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
             color: #1f2937;
             padding: 1rem 2rem;
             border-radius: 8px;
@@ -178,7 +177,46 @@
 
         .btn-secondary:hover {
             background: white;
-            color: #1e40af;
+            color: #1f2937;
+        }
+
+        .hero-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-logo img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(251, 191, 36, 0.3));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Brand Strip */
+        .brand-strip {
+            background: #fbbf24;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .brand-strip h3 {
+            color: #1f2937;
+            font-size: 1.2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .brand-strip .logo-small {
+            height: 30px;
         }
 
         /* Services Section */
@@ -192,8 +230,18 @@
             margin: 0 auto;
         }
 
-        .section-title {
+        .section-header {
             text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-logo {
+            width: 80px;
+            height: auto;
+            margin: 0 auto 1.5rem;
+        }
+
+        .section-title {
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
@@ -201,19 +249,15 @@
         }
 
         .section-subtitle {
-            text-align: center;
             color: #6b7280;
-            margin-bottom: 4rem;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
         }
 
         .service-card {
@@ -222,6 +266,7 @@
             padding: 2.5rem;
             box-shadow: 0 4px 6px rgba(0,0,0,0.07);
             transition: all 0.3s;
+            border-top: 4px solid #fbbf24;
         }
 
         .service-card:hover {
@@ -232,7 +277,7 @@
         .service-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -268,79 +313,29 @@
 
         .service-features li::before {
             content: '✓';
-            color: #10b981;
+            color: #fbbf24;
             font-weight: bold;
-        }
-
-        .service-btn {
-            width: 100%;
-            padding: 0.9rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1rem;
-        }
-
-        .btn-blue {
-            background: #1e40af;
-            color: white;
-        }
-
-        .btn-blue:hover {
-            background: #1e3a8a;
-            transform: scale(1.02);
-        }
-
-        .btn-dark {
-            background: #1f2937;
-            color: white;
-        }
-
-        .btn-dark:hover {
-            background: #111827;
-            transform: scale(1.02);
-        }
-
-        /* Additional Services */
-        .additional-services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .additional-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            transition: all 0.3s;
-        }
-
-        .additional-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-        }
-
-        .additional-icon {
-            width: 50px;
-            height: 50px;
-            background: #dbeafe;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
 
         /* Process Section */
         .process {
             padding: 5rem 2rem;
             background: white;
+            position: relative;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="%23fbbf24" opacity="0.05" d="M100 0L123.5 76.5L200 100L123.5 123.5L100 200L76.5 123.5L0 100L76.5 76.5Z"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         .process-steps {
@@ -348,17 +343,23 @@
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+            position: relative;
+            z-index: 1;
         }
 
         .step {
             text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
 
         .step-number {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
-            color: white;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #1f2937;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -382,7 +383,16 @@
         /* Testimonials */
         .testimonials {
             padding: 5rem 2rem;
-            background: #f9fafb;
+            background: #1f2937;
+            color: white;
+        }
+
+        .testimonials .section-title {
+            color: white;
+        }
+
+        .testimonials .section-subtitle {
+            color: #9ca3af;
         }
 
         .testimonials-grid {
@@ -393,10 +403,11 @@
         }
 
         .testimonial-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border: 1px solid rgba(251, 191, 36, 0.2);
         }
 
         .stars {
@@ -406,7 +417,7 @@
         }
 
         .testimonial-text {
-            color: #4b5563;
+            color: #e5e7eb;
             margin-bottom: 1.5rem;
             font-style: italic;
             line-height: 1.7;
@@ -421,18 +432,22 @@
         .author-avatar {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #1f2937;
             font-weight: bold;
         }
 
         .author-info h4 {
-            color: #1f2937;
+            color: white;
             margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #9ca3af;
         }
 
         /* Contact Section */
@@ -460,6 +475,11 @@
             margin-bottom: 2rem;
         }
 
+        .contact-logo {
+            width: 150px;
+            margin-bottom: 2rem;
+        }
+
         .contact-details {
             list-style: none;
         }
@@ -474,7 +494,7 @@
         .contact-icon {
             width: 40px;
             height: 40px;
-            background: #dbeafe;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -486,6 +506,7 @@
             background: #f9fafb;
             padding: 2.5rem;
             border-radius: 12px;
+            border-top: 4px solid #fbbf24;
         }
 
         .contact-form h3 {
@@ -510,7 +531,7 @@
         .form-group textarea {
             width: 100%;
             padding: 0.8rem;
-            border: 1px solid #d1d5db;
+            border: 2px solid #e5e7eb;
             border-radius: 6px;
             font-size: 1rem;
             transition: border-color 0.3s;
@@ -520,7 +541,7 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #3b82f6;
+            border-color: #fbbf24;
         }
 
         .form-group textarea {
@@ -528,191 +549,9 @@
             min-height: 100px;
         }
 
-        /* Eligibility Page Styles */
-        .page-header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-            color: white;
-            padding: 3rem 2rem;
-            margin-top: 70px;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .back-link {
-            color: white;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-
-        .back-link:hover {
-            opacity: 1;
-        }
-
-        .eligibility-container {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        .calculator-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-        }
-
-        .info-box {
-            background: #dbeafe;
-            border-left: 4px solid #1e40af;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-
-        .info-box h3 {
-            color: #1e40af;
-            margin-bottom: 0.5rem;
-        }
-
-        .info-box p {
-            color: #1f2937;
-            margin: 0;
-        }
-
-        /* Inventory Page Styles */
-        .filter-section {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-            margin-bottom: 2rem;
-        }
-
-        .filter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .filter-actions {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .bike-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .bike-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-            transition: all 0.3s;
-        }
-
-        .bike-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-        }
-
-        .bike-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .bike-details {
-            padding: 1.5rem;
-        }
-
-        .bike-badge {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            background: #dbeafe;
-            color: #1e40af;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .bike-badge.new {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .bike-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 0.5rem;
-        }
-
-        .bike-specs {
-            list-style: none;
-            margin: 1rem 0;
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        .bike-specs li {
-            padding: 0.3rem 0;
-        }
-
-        .bike-price {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #1e40af;
-            margin: 1rem 0;
-        }
-
-        .bike-emi {
-            color: #059669;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .apply-btn {
-            width: 100%;
-            background: #fbbf24;
-            color: #1f2937;
-            padding: 0.9rem;
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .apply-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
-        }
-
-        #eligibilityPage,
-        #inventoryPage {
-            display: none;
-        }
-
         .submit-btn {
             width: 100%;
-            background: #fbbf24;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
             color: #1f2937;
             padding: 1rem;
             border: none;
@@ -730,7 +569,7 @@
 
         /* Footer */
         footer {
-            background: #0f172a;
+            background: #111827;
             color: white;
             padding: 3rem 2rem 1rem;
         }
@@ -744,17 +583,19 @@
             margin-bottom: 2rem;
         }
 
-        .footer-about h3 {
+        .footer-logo {
+            width: 150px;
             margin-bottom: 1rem;
         }
 
         .footer-about p {
-            color: #94a3b8;
+            color: #9ca3af;
             margin-bottom: 1rem;
         }
 
         .footer-links h4 {
             margin-bottom: 1rem;
+            color: #fbbf24;
         }
 
         .footer-links ul {
@@ -762,7 +603,7 @@
         }
 
         .footer-links a {
-            color: #94a3b8;
+            color: #9ca3af;
             text-decoration: none;
             display: block;
             padding: 0.3rem 0;
@@ -777,9 +618,9 @@
             max-width: 1200px;
             margin: 0 auto;
             padding-top: 2rem;
-            border-top: 1px solid #334155;
+            border-top: 1px solid #374151;
             text-align: center;
-            color: #94a3b8;
+            color: #9ca3af;
         }
 
         @media (max-width: 768px) {
@@ -787,7 +628,11 @@
                 display: none;
             }
 
-            .hero h1 {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
 
@@ -803,20 +648,17 @@
     </style>
 </head>
 <body>
-    <!-- Main Content Wrapper -->
-    <div id="mainContent">
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <div class="logo-icon">SMK</div>
-                <span>SMK Automobiles</span>
+                <img src="./logo" alt="SMK Automobiles" class="logo-image">
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#bikes">Bikes</a></li>
                 <li><a href="#howitworks">How it Works</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#contact" class="enquire-btn">📞 Enquire Now</a>
@@ -826,34 +668,47 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-container">
-            <div class="breadcrumb">
-                <span>🏠</span>
-                <span>Trusted Dealer in Coimbatore</span>
+            <div class="hero-content">
+                <h1>Your Dream Bike,<br>Now <span>Within Reach</span></h1>
+                <p>Coimbatore's trusted choice for easy bike finance and quality pre-owned bikes. Get on the road faster with our simplified approval process.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Apply for Finance →</a>
+                    <a href="#services" class="btn-secondary">Our Services</a>
+                </div>
             </div>
-            <h1>Your Dream Bike,<br>Now Within Reach</h1>
-            <p>Coimbatore's trusted choice for easy bike finance and quality pre-owned bikes. Get on the road faster with our simplified approval process.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Apply for Finance →</a>
-                <a href="#contact" class="btn-secondary">Available Bikes</a>
+            <div class="hero-logo">
+                <img src="./logo" alt="SMK Automobiles">
             </div>
         </div>
     </section>
 
+    <!-- Brand Strip -->
+    <div class="brand-strip">
+        <h3>
+            <img src="./logo" alt="SMK" class="logo-small">
+            <span>TRUSTED BY THOUSANDS IN COIMBATORE SINCE 2014</span>
+            <img src="./logo" alt="SMK" class="logo-small">
+        </h3>
+    </div>
+
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Our Core Services</h2>
-            <p class="section-subtitle">We provide comprehensive financing solutions for all your two-wheeler needs in Coimbatore</p>
+            <div class="section-header">
+                <img src="./logo" alt="SMK Automobiles" class="section-logo">
+                <h2 class="section-title">Our Core Services</h2>
+                <p class="section-subtitle">Comprehensive financing solutions for all your two-wheeler needs in Coimbatore</p>
+            </div>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">💰</div>
                     <h3>Two-Wheeler Finance</h3>
-                    <p>Effortless budget-conscious financing. We offer low EMI schemes and hassle-free approval for your dream bike with minimal paperwork.</p>
+                    <p>Effortless budget-conscious financing with low EMI schemes and hassle-free approval for your dream bike.</p>
                     <ul class="service-features">
                         <li>Low Interest Rates</li>
                         <li>Quick Approval</li>
-                        <li>Flexible Repayment 100%+</li>
+                        <li>Flexible Repayment</li>
                     </ul>
                 </div>
 
@@ -867,38 +722,16 @@
                         <li>Up to 100% Financing</li>
                     </ul>
                 </div>
-                    </ul>
-                </div>
 
                 <div class="service-card">
-                    <div class="service-icon">🏍️</div>
+                    <div class="service-icon">✓</div>
                     <h3>Pre-Owned Bikes</h3>
-                    <p>Ride with confidence. Our verified, quality-checked bikes come with a transparent history and trusted aftersales support.</p>
+                    <p>Ride with confidence. Our verified, quality-checked bikes come with transparent history and trusted aftersales support.</p>
                     <ul class="service-features">
                         <li>10+ Quality Checks</li>
                         <li>Full Insurance & Papers</li>
                         <li>Free Lift Service</li>
                     </ul>
-                </div>
-            </div>
-
-            <div class="additional-services">
-                <div class="additional-card">
-                    <div class="additional-icon">🚚</div>
-                    <h3>Transparent Pricing</h3>
-                    <p>No hidden fees! Competitive rates & all fees presented upfront before you decide.</p>
-                </div>
-
-                <div class="additional-card">
-                    <div class="additional-icon">🛡️</div>
-                    <h3>Legal Trusted Service</h3>
-                    <p>Proudly servicing Coimbatore over 10 years with thousands of happy customers.</p>
-                </div>
-
-                <div class="additional-card">
-                    <div class="additional-icon">📄</div>
-                    <h3>Minimal Documentation</h3>
-                    <p>Get approved with just basic ID and income proof. We make the process smooth & simple.</p>
                 </div>
             </div>
         </div>
@@ -907,14 +740,17 @@
     <!-- Process Section -->
     <section class="process" id="howitworks">
         <div class="container">
-            <h2 class="section-title">Simple 4-Step Process</h2>
-            <p class="section-subtitle">Getting your dream bike is easier than you think</p>
+            <div class="section-header">
+                <img src="./logo" alt="SMK Automobiles" class="section-logo">
+                <h2 class="section-title">Simple 4-Step Process</h2>
+                <p class="section-subtitle">Getting your dream bike is easier than you think</p>
+            </div>
             
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Choose</h3>
-                    <p>Select your bike into one with range of two and pre-owned inventory.</p>
+                    <p>Select your bike from our range of new and pre-owned inventory.</p>
                 </div>
 
                 <div class="step">
@@ -939,9 +775,12 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Trusted by thousands of satisfied riders in Coimbatore</p>
+            </div>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -958,7 +797,7 @@
 
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Bought a great second-hand product. The bike was in excellent condition and the price was highly reasonable! SMK for second-hand bikes!"</p>
+                    <p class="testimonial-text">"Bought a great second-hand bike. The bike was in excellent condition and the price was highly reasonable! Recommend SMK for second-hand bikes!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">SK</div>
                         <div class="author-info">
@@ -987,6 +826,7 @@
     <section class="contact" id="contact">
         <div class="contact-container">
             <div class="contact-info">
+                <img src="./logo" alt="SMK Automobiles" class="contact-logo">
                 <h2>Get in Touch</h2>
                 <p>Ready to get your bike? Visit our showroom or fill out the form, and our team will get back to you shortly.</p>
                 
@@ -995,7 +835,7 @@
                         <div class="contact-icon">📍</div>
                         <div>
                             <strong>Showroom Address</strong>
-                            <p>123, thudiyalur Road, appanaickenpalayam,<br>Coimbatore, Tamil Nadu, India</p>
+                            <p>123, Thudiyalur Road, Appanaickenpalayam,<br>Coimbatore, Tamil Nadu, India</p>
                         </div>
                     </li>
                     <li>
@@ -1053,7 +893,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-about">
-                <h3>SMK Automobiles</h3>
+                <img src="./logo" alt="SMK Automobiles" class="footer-logo">
                 <p>Your trusted partner for affordable bike finance and certified pre-owned bikes in Coimbatore. Serving riders since 2014 with dedication and transparency.</p>
             </div>
 
@@ -1062,7 +902,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Our Services</a></li>
-                    <li><a href="#bikes">Available Bikes</a></li>
+                    <li><a href="#howitworks">How it Works</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
@@ -1073,453 +913,3 @@
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
                     <li><a href="#">Cookie Policy</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2024 SMK Automobiles. All rights reserved.</p>
-        </div>
-    </footer>
-    </div>
-    <!-- End Main Content -->
-
-    <!-- Eligibility Page -->
-    <div id="eligibilityPage">
-        <nav>
-            <div class="nav-container">
-                <div class="logo">
-                    <div class="logo-icon">SMK</div>
-                    <span>SMK Automobiles</span>
-                </div>
-                <a href="javascript:showMainPage()" class="enquire-btn">← Back to Home</a>
-            </div>
-        </nav>
-
-        <div class="page-header">
-            <div class="container">
-                <a href="javascript:showMainPage()" class="back-link">← Back to Home</a>
-                <h1>Check Your Eligibility</h1>
-                <p>Calculate your loan eligibility and estimated EMI in seconds</p>
-            </div>
-        </div>
-
-        <div class="eligibility-container">
-            <div class="info-box">
-                <h3>💡 Quick & Easy Eligibility Check</h3>
-                <p>Enter your details below to instantly check if you qualify for bike financing. Our calculator will show you the estimated monthly EMI and total payable amount.</p>
-            </div>
-
-            <div class="calculator-card">
-                <h2 style="margin-bottom: 2rem; color: #1f2937;">Loan Eligibility Calculator</h2>
-                
-                <form id="eligibilityForm" onsubmit="calculateEligibility(event)">
-                    <div class="form-group">
-                        <label for="income">Monthly Income (₹)</label>
-                        <input type="number" id="income" required min="10000" placeholder="e.g., 25000">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="loanAmount">Loan Amount Required (₹)</label>
-                        <input type="number" id="loanAmount" required min="20000" max="500000" placeholder="e.g., 80000">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="tenure">Loan Tenure (Months)</label>
-                        <select id="tenure" required>
-                            <option value="">Select Tenure</option>
-                            <option value="12">12 Months (1 Year)</option>
-                            <option value="24">24 Months (2 Years)</option>
-                            <option value="36">36 Months (3 Years)</option>
-                            <option value="48">48 Months (4 Years)</option>
-                            <option value="60">60 Months (5 Years)</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Calculate Eligibility</button>
-                </form>
-
-                <div id="eligibilityResult"></div>
-            </div>
-
-            <div style="margin-top: 3rem; background: #f9fafb; padding: 2rem; border-radius: 12px;">
-                <h3 style="color: #1f2937; margin-bottom: 1rem;">Documents Required:</h3>
-                <ul style="color: #6b7280; line-height: 2;">
-                    <li>✓ ID Proof (Aadhar / PAN / Voter ID)</li>
-                    <li>✓ Address Proof (Electricity Bill / Rent Agreement)</li>
-                    <li>✓ Income Proof (Salary Slip / Bank Statement)</li>
-                    <li>✓ Recent Passport Size Photographs</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- End Eligibility Page -->
-
-    <!-- Inventory Page -->
-    <div id="inventoryPage">
-        <nav>
-            <div class="nav-container">
-                <div class="logo">
-                    <div class="logo-icon">SMK</div>
-                    <span>SMK Automobiles</span>
-                </div>
-                <a href="javascript:showMainPage()" class="enquire-btn">← Back to Home</a>
-            </div>
-        </nav>
-
-        <div class="page-header">
-            <div class="container">
-                <a href="javascript:showMainPage()" class="back-link">← Back to Home</a>
-                <h1>Browse Our Inventory</h1>
-                <p>Find your perfect bike and apply for instant financing</p>
-            </div>
-        </div>
-
-        <div class="container" style="margin-top: 3rem; margin-bottom: 5rem;">
-            <div class="filter-section">
-                <h3 style="margin-bottom: 1.5rem; color: #1f2937;">Filter Bikes</h3>
-                <div class="filter-grid">
-                    <div class="form-group" style="margin-bottom: 0;">
-                        <label for="filterBrand">Brand</label>
-                        <select id="filterBrand" onchange="filterInventory()">
-                            <option value="">All Brands</option>
-                            <option value="Royal Enfield">Royal Enfield</option>
-                            <option value="Honda">Honda</option>
-                            <option value="Yamaha">Yamaha</option>
-                            <option value="Bajaj">Bajaj</option>
-                            <option value="TVS">TVS</option>
-                            <option value="Hero">Hero</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 0;">
-                        <label for="filterPrice">Price Range</label>
-                        <select id="filterPrice" onchange="filterInventory()">
-                            <option value="">All Prices</option>
-                            <option value="0-50000">Under ₹50,000</option>
-                            <option value="50000-100000">₹50,000 - ₹1,00,000</option>
-                            <option value="100000-150000">₹1,00,000 - ₹1,50,000</option>
-                            <option value="150000-999999">Above ₹1,50,000</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 0;">
-                        <label for="filterCondition">Condition</label>
-                        <select id="filterCondition" onchange="filterInventory()">
-                            <option value="">All</option>
-                            <option value="new">New</option>
-                            <option value="used">Used</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="filter-actions">
-                    <button onclick="resetFilters()" style="background: #6b7280; color: white; padding: 0.7rem 1.5rem; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Reset Filters</button>
-                </div>
-            </div>
-
-            <div class="bike-grid">
-                <!-- Royal Enfield Classic 350 -->
-                <div class="bike-card" data-brand="Royal Enfield" data-price="185000" data-condition="new">
-                    <div class="bike-image">🏍️</div>
-                    <div class="bike-details">
-                        <span class="bike-badge new">New</span>
-                        <h3 class="bike-name">Royal Enfield Classic 350</h3>
-                        <ul class="bike-specs">
-                            <li>📅 Year: 2024</li>
-                            <li>⚙️ Engine: 349cc</li>
-                            <li>⛽ Mileage: 35-40 km/l</li>
-                        </ul>
-                        <div class="bike-price">₹1,85,000</div>
-                        <div class="bike-emi">EMI starting from ₹5,200/month*</div>
-                        <button class="apply-btn" onclick="applyForBike('Royal Enfield Classic 350', 185000)">Apply for Finance</button>
-                    </div>
-                </div>
-
-                <!-- Honda CB350 -->
-                <div class="bike-card" data-brand="Honda" data-price="195000" data-condition="new">
-                    <div class="bike-image">🏍️</div>
-                    <div class="bike-details">
-                        <span class="bike-badge new">New</span>
-                        <h3 class="bike-name">Honda CB350</h3>
-                        <ul class="bike-specs">
-                            <li>📅 Year: 2024</li>
-                            <li>⚙️ Engine: 348cc</li>
-                            <li>⛽ Mileage: 40-45 km/l</li>
-                        </ul>
-                        <div class="bike-price">₹1,95,000</div>
-                        <div class="bike-emi">EMI starting from ₹5,500/month*</div>
-                        <button class="apply-btn" onclick="applyForBike('Honda CB350', 195000)">Apply for Finance</button>
-                    </div>
-                </div>
-
-                <!-- Yamaha R15 V4 -->
-                <div class="bike-card" data-brand="Yamaha" data-price="175000" data-condition="new">
-                    <div class="bike-image">🏍️</div>
-                    <div class="bike-details">
-                        <span class="bike-badge new">New</span>
-                        <h3 class="bike-name">Yamaha R15 V4</h3>
-                        <ul class="bike-specs">
-                            <li>📅 Year: 2024</li>
-                            <li>⚙️ Engine: 155cc</li>
-                            <li>⛽ Mileage: 40-50 km/l</li>
-                        </ul>
-                        <div class="bike-price">₹1,75,000</div>
-                        <div class="bike-emi">EMI starting from ₹4,900/month*</div>
-                        <button class="apply-btn" onclick="applyForBike('Yamaha R15 V4', 175000)">Apply for Finance</button>
-                    </div>
-                </div>
-
-                <!-- Bajaj Pulsar NS200 -->
-                <div class="bike-card" data-brand="Bajaj" data-price="145000" data-condition="new">
-                    <div class="bike-image">🏍️</div>
-                    <div class="bike-details">
-                        <span class="bike-badge new">New</span>
-                        <h3 class="bike-name">Bajaj Pulsar NS200</h3>
-                        <ul class="bike-specs">
-                            <li>📅 Year: 2024</li>
-                            <li>⚙️ Engine: 199cc</li>
-                            <li>⛽ Mileage: 35-40 km/l</li>
-                        </ul>
-                        <div class="bike-price">₹1,45,000</div>
-                        <div class="bike-emi">EMI starting from ₹4,100/month*</div>
-                        <button class="apply-btn" onclick="applyForBike('Bajaj Pulsar NS200', 145000)">Apply for Finance</button>
-                    </div>
-                </div>
-
-                <!-- Used Royal Enfield Bullet -->
-                <div class="bike-card" data-brand="Royal Enfield" data-price="85000" data-condition="used">
-                    <div class="bike-image">🏍️</div>
-                    <div class="bike-details">
-                        <span class="bike-badge">Used - Excellent</span>
-                        <h3 class="bike-name">Royal Enfield Bullet 350</h3>
-                        <ul class="bike-specs">
-                            <li>📅 Year: 2020</li>
-                            <li>⚙️ Engine: 346cc</li>
-                            <li>📍 KM: 15,000</li>
-                        </ul>
-                        <div class="bike-price">₹85,000</div>
-                        <div class="bike-emi">EMI starting from ₹2,400/month*</div>
-                        <button class="apply-btn" onclick="applyForBike('Royal Enfield Bullet 350 (Used)', 85000)">Apply for Finance</button>
-                    </div>
-                </div>
-
-                <!-- Used Honda Activa -->
-                <div class="bike-card" data-brand="Honda" data-price="45000" data-condition="used">
-                    <div class="bike-image">🛵</div>
-                    <div class="bike-details">
-                        <span class="bike-badge">Used - Good</span>
-                        <h3 class="bike-name">Honda Activa 5G</h3>
-                        <ul class="bike-specs">
-                            <li>📅 Year: 2019</li>
-                            <li>⚙️ Engine: 109cc</li>
-                            <li>📍 KM: 22,000</li>
-                        </ul>
-                        <div class="bike-price">₹45,000</div>
-                        <div class="bike-emi">EMI starting from ₹1,300/month*</div>
-                        <button class="apply-btn" onclick="applyForBike('Honda Activa 5G (Used)', 45000)">Apply for Finance</button>
-                    </div>
-                </div>
-
-                <!-- TVS Apache RTR 160 -->
-                <div class="bike-card" data-brand="TVS" data-price="125000" data-condition="new">
-                    <div class="bike-image">🏍️</div>
-                    <div class="bike-details">
-                        <span class="bike-badge new">New</span>
-                        <h3 class="bike-name">TVS Apache RTR 160 4V</h3>
-                        <ul class="bike-specs">
-                            <li>📅 Year: 2024</li>
-                            <li>⚙️ Engine: 159cc</li>
-                            <li>⛽ Mileage: 45-50 km/l</li>
-                        </ul>
-                        <div class="bike-price">₹1,25,000</div>
-                        <div class="bike-emi">EMI starting from ₹3,500/month*</div>
-                        <button class="apply-btn" onclick="applyForBike('TVS Apache RTR 160 4V', 125000)">Apply for Finance</button>
-                    </div>
-                </div>
-
-                <!-- Hero Splendor Plus -->
-                <div class="bike-card" data-brand="Hero" data-price="75000" data-condition="new">
-                    <div class="bike-image">🏍️</div>
-                    <div class="bike-details">
-                        <span class="bike-badge new">New</span>
-                        <h3 class="bike-name">Hero Splendor Plus</h3>
-                        <ul class="bike-specs">
-                            <li>📅 Year: 2024</li>
-                            <li>⚙️ Engine: 97cc</li>
-                            <li>⛽ Mileage: 60-70 km/l</li>
-                        </ul>
-                        <div class="bike-price">₹75,000</div>
-                        <div class="bike-emi">EMI starting from ₹2,100/month*</div>
-                        <button class="apply-btn" onclick="applyForBike('Hero Splendor Plus', 75000)">Apply for Finance</button>
-                    </div>
-                </div>
-
-                <!-- Used Yamaha FZ -->
-                <div class="bike-card" data-brand="Yamaha" data-price="65000" data-condition="used">
-                    <div class="bike-image">🏍️</div>
-                    <div class="bike-details">
-                        <span class="bike-badge">Used - Excellent</span>
-                        <h3 class="bike-name">Yamaha FZ-S V2</h3>
-                        <ul class="bike-specs">
-                            <li>📅 Year: 2018</li>
-                            <li>⚙️ Engine: 149cc</li>
-                            <li>📍 KM: 18,500</li>
-                        </ul>
-                        <div class="bike-price">₹65,000</div>
-                        <div class="bike-emi">EMI starting from ₹1,850/month*</div>
-                        <button class="apply-btn" onclick="applyForBike('Yamaha FZ-S V2 (Used)', 65000)">Apply for Finance</button>
-                    </div>
-                </div>
-            </div>
-
-            <div style="margin-top: 3rem; text-align: center; padding: 2rem; background: #f9fafb; border-radius: 12px;">
-                <h3 style="color: #1f2937; margin-bottom: 1rem;">Didn't find what you're looking for?</h3>
-                <p style="color: #6b7280; margin-bottom: 1.5rem;">We can help you finance any bike of your choice! Contact us and we'll arrange it for you.</p>
-                <a href="javascript:showMainPage()" class="btn-primary">Contact Us</a>
-            </div>
-        </div>
-    </div>
-    <!-- End Inventory Page -->
-
-    <script>
-        // Page navigation
-        function showEligibilityPage() {
-            document.getElementById('mainContent').style.display = 'none';
-            document.getElementById('eligibilityPage').style.display = 'block';
-            document.getElementById('inventoryPage').style.display = 'none';
-            window.scrollTo(0, 0);
-        }
-
-        function showInventoryPage() {
-            document.getElementById('mainContent').style.display = 'none';
-            document.getElementById('eligibilityPage').style.display = 'none';
-            document.getElementById('inventoryPage').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-
-        function showMainPage() {
-            document.getElementById('mainContent').style.display = 'block';
-            document.getElementById('eligibilityPage').style.display = 'none';
-            document.getElementById('inventoryPage').style.display = 'none';
-            window.scrollTo(0, 0);
-        }
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Eligibility Calculator
-        function calculateEligibility(e) {
-            e.preventDefault();
-            const income = parseFloat(document.getElementById('income').value);
-            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
-            const tenure = parseInt(document.getElementById('tenure').value);
-            
-            const interestRate = 12; // 12% annual
-            const monthlyRate = interestRate / 12 / 100;
-            const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, tenure)) / (Math.pow(1 + monthlyRate, tenure) - 1);
-            
-            const eligible = (emi <= income * 0.5);
-            
-            const resultDiv = document.getElementById('eligibilityResult');
-            resultDiv.innerHTML = `
-                <div style="background: ${eligible ? '#d1fae5' : '#fee2e2'}; padding: 2rem; border-radius: 12px; margin-top: 2rem;">
-                    <h3 style="color: ${eligible ? '#065f46' : '#991b1b'}; margin-bottom: 1rem; font-size: 1.5rem;">
-                        ${eligible ? '✅ You are Eligible!' : '⚠️ Eligibility Check'}
-                    </h3>
-                    <div style="color: #1f2937; margin-bottom: 1rem;">
-                        <strong>Estimated Monthly EMI:</strong> ₹${Math.round(emi).toLocaleString()}
-                    </div>
-                    <div style="color: #1f2937; margin-bottom: 1rem;">
-                        <strong>Total Amount Payable:</strong> ₹${Math.round(emi * tenure).toLocaleString()}
-                    </div>
-                    <div style="color: #1f2937; margin-bottom: 1rem;">
-                        <strong>Interest Rate:</strong> ${interestRate}% per annum
-                    </div>
-                    ${eligible ? 
-                        '<p style="color: #065f46; margin-top: 1rem;">Great news! Based on your income, you qualify for this loan. Our team will contact you shortly to proceed.</p>' :
-                        '<p style="color: #991b1b; margin-top: 1rem;">The EMI is higher than recommended for your income. Consider a lower loan amount or longer tenure. Our team can help you find the best option.</p>'
-                    }
-                    <button onclick="document.getElementById('eligibilityForm').reset(); document.getElementById('eligibilityResult').innerHTML = '';" style="background: #1e40af; color: white; padding: 0.8rem 2rem; border: none; border-radius: 6px; margin-top: 1rem; cursor: pointer; font-weight: 600;">Calculate Again</button>
-                </div>
-            `;
-        }
-
-        // Inventory Filter
-        function filterInventory() {
-            const brand = document.getElementById('filterBrand').value;
-            const priceRange = document.getElementById('filterPrice').value;
-            const condition = document.getElementById('filterCondition').value;
-            
-            const bikes = document.querySelectorAll('.bike-card');
-            
-            bikes.forEach(bike => {
-                let show = true;
-                
-                if (brand && bike.dataset.brand !== brand) show = false;
-                if (condition && bike.dataset.condition !== condition) show = false;
-                if (priceRange) {
-                    const price = parseInt(bike.dataset.price);
-                    const [min, max] = priceRange.split('-').map(Number);
-                    if (price < min || (max && price > max)) show = false;
-                }
-                
-                bike.style.display = show ? 'block' : 'none';
-            });
-        }
-
-        function resetFilters() {
-            document.getElementById('filterBrand').value = '';
-            document.getElementById('filterPrice').value = '';
-            document.getElementById('filterCondition').value = '';
-            filterInventory();
-        }
-
-        // Apply for bike financing
-        function applyForBike(bikeName, bikePrice) {
-            alert(`Great choice! You've selected ${bikeName} (₹${bikePrice.toLocaleString()}).\n\nOur team will contact you shortly to discuss financing options.`);
-        }
-
-        // Form submission
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for your interest! Our team will contact you shortly.');
-                    this.reset();
-                });
-            }
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .step, .testimonial-card, .additional-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
